@@ -16,6 +16,14 @@
         <Name>target.copy.pathsuffix</Name>
         <Value>false</Value>
     </AssignVariable>
+    <AssignVariable>
+        <Name>abc_text</Name>
+        <Value>abc</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>assigned</Name>
+        <Template>{md5Base64(abc_text)}</Template>
+    </AssignVariable>
     <Set>
         <QueryParams>
             <QueryParam name="latitude">{lat}</QueryParam>
@@ -25,7 +33,7 @@
     </Set>
     <Remove>
         <QueryParams>
-            <QueryParam name="near"/>
+            <QueryParam name="near" />
         </QueryParams>
     </Remove>
     <AssignTo>request</AssignTo>
