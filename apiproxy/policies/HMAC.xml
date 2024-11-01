@@ -2,6 +2,6 @@
     <Algorithm>SHA256</Algorithm>
     <SecretKey encoding='base64' ref='private.key'/>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <!-- optional -->
-    <Message>Fixed Part-{request.header.host}</Message>
+    <Message>Fixed Part-{assigned}</Message>
     <Output encoding="base16">hmacResult</Output>
   </HMAC>
