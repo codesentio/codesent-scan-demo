@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractVariables">
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <QueryParam name="current">
+        <Pattern ignoreCase="true">{current}</Pattern>
+    </QueryParam>
+    <Source clearPayload="false">request</Source>
+    <VariablePrefix>flow</VariablePrefix>
+</ExtractVariables>

@@ -24,13 +24,10 @@
         <Name>assigned</Name>
         <Template>{md5Base64(abc_text)}</Template>
     </AssignVariable>
-    <Set>
-        <QueryParams>
-            <QueryParam name="latitude">{lat}</QueryParam>
-            <QueryParam name="longitude">{lon}</QueryParam>
-            <QueryParam name="current">temperature</QueryParam>
-        </QueryParams>
-    </Set>
+    <AssignVariable>
+        <Name>target.url</Name>
+        <Template>https://api.open-meteo.com/v1/forecast?latitude={lat}&amp;longtitude={lon}&amp;current={flow.current}</Template>
+    </AssignVariable>
     <Remove>
         <QueryParams>
             <QueryParam name="near" />
