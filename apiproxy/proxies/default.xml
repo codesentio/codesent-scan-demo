@@ -31,6 +31,12 @@
             <Description/>
             <Request>
                 <Step>
+                    <Name>AM-Key</Name>
+                </Step>
+                <Step>
+                    <Name>HMAC</Name>
+                </Step>
+                <Step>
                     <Name>SC-Geocode</Name>
                 </Step>
                 <Step>

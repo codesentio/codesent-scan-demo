@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-Key">
+    <AssignVariable>
+        <Name>private.key</Name>
+        <Value>xq3pDsZkdWwNoLQFM0B3uvVwUbKEXLYq</Value>
+    </AssignVariable>
+</AssignMessage>
