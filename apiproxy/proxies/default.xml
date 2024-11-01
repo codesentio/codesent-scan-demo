@@ -17,6 +17,9 @@
             <Step>
                 <Name>APIKeyVerifier</Name>
             </Step>
+            <Step>
+                <Name>SpikeArrest</Name>
+            </Step>
         </Request>
         <Response/>
     </PreFlow>
