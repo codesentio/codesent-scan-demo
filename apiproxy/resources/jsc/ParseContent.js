@@ -10,14 +10,11 @@ if (requestBody) {
         var nameRegex = /^[a-zA-Z\s]+$/;
         var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-        if (!name || !nameRegex.test(name)) {
+        if (!nameRegex.test(name)) {
             throw new Error("Invalid name format");
         }
-        if (!dob || !dobRegex.test(dob)) {
+        if (!dobRegex.test(dob)) {
             throw new Error("Invalid date of birth format");
-        }
-        if (!securityQuestion) {
-            throw new Error("Invalid security question format");
         }
 
         parsedBody['dateOfBirth'] = dob;
