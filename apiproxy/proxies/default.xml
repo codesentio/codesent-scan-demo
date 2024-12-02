@@ -38,7 +38,7 @@
             <Response/>
             <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
         </Flow>
-        <Flow name="userInfo">
+        <Flow name="userInfo-GET">
             <Description/>
             <Request>
                 <Step>
@@ -54,14 +54,14 @@
             <Response/>
             <Condition>(proxy.pathsuffix == "/userinfo") and (request.verb = "GET")</Condition>
         </Flow>
-        <Flow name="userInfo">
+        <Flow name="userInfo-PATCH">
             <Description/>
             <Request>
                 <Step>
                     <Name>ParseJSONtoXML</Name>
                 </Step>
                 <Step>
-                    <Name>DecodeJWT</Name>
+                    <Name>APIKeyVerifier</Name>
                 </Step>
                 <Step>
                     <Name>HMAC</Name>
