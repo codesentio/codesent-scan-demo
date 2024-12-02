@@ -1,4 +1,4 @@
-<DecodeJWT name="JWT-Decode-HS256">
+<DecodeJWT name="JWT">
     <DisplayName>JWT</DisplayName>
     <Source>flow.jwt</Source>
 </DecodeJWT>

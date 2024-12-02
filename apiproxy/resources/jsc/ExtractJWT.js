@@ -5,6 +5,7 @@ if (authorizationHeader) {
     if (parts.length === 2 && parts[0] === 'Bearer') {
         var token = parts[1];
         context.setVariable("flow.jwt", token);
+        context.removeVariable("request.header.Authorization")
     } else {
         throw new Error("Invalid token");
     }
