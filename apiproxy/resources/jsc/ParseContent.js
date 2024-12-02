@@ -3,9 +3,9 @@ var requestBody = context.getVariable("request.content");
 if (requestBody) {
     try {
         var parsedBody = JSON.parse(requestBody);
-        var name = parsedBody.name || "";
-        var dob = parsedBody.dob || "";
-        var securityQuestion = parsedBody.securityQuestion || "";
+        var name = parsedBody.name;
+        var dob = parsedBody.dob;
+        var securityQuestion = parsedBody.securityQuestion;
 
         var xmlContent = 
             '<User>' +

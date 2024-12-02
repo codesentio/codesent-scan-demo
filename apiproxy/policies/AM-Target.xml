@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage continueOnError="false" enabled="true" name="AM-Target">
     <AssignVariable>
         <Name>target.copy.pathsuffix</Name>
