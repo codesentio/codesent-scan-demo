@@ -48,9 +48,6 @@
                     <Name>DecodeJWT</Name>
                 </Step>
                 <Step>
-                    <Name>HMAC</Name>
-                </Step>
-                <Step>
                     <Name>RaiseFault</Name>
                     <Condition>(isError = true)</Condition>
                 </Step>
@@ -66,9 +63,6 @@
                 </Step>
                 <Step>
                     <Name>ParseJSON</Name>
-                </Step>
-                <Step>
-                    <Name>HMAC</Name>
                 </Step>
             </Request>
             <Response/>
