@@ -27,7 +27,7 @@ if (requestBody) {
         context.setVariable("request.content", updJsonString);
         context.setVariable("request.headers.content-type", "application/json");
     } catch (e) {
-        context.setVariable("error", e.message || "Invalid JSON");
+        context.setVariable("error", "Invalid JSON");
     }
 } else {
     context.setVariable("error", "Empty Body");
