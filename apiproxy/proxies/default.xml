@@ -58,10 +58,10 @@
             <Description/>
             <Request>
                 <Step>
-                    <Name>ParseJSONtoXML</Name>
+                    <Name>APIKeyVerifier</Name>
                 </Step>
                 <Step>
-                    <Name>APIKeyVerifier</Name>
+                    <Name>ParseJSON</Name>
                 </Step>
                 <Step>
                     <Name>HMAC</Name>
