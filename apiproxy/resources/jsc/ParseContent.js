@@ -6,6 +6,7 @@ if (requestBody) {
 
         var name = parsedBody['name'];
         var dob = parsedBody['dob'];
+        var securityQuestion = parsedBody['securityQuestion'];
 
         var nameRegex = /^[a-zA-Z\s]+$/;
         var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -15,6 +16,9 @@ if (requestBody) {
         }
         if (!dobRegex.test(dob)) {
             throw new Error("Invalid date of birth format");
+        }
+        if (!securityQuestion) {
+            throw new Error("Invalid security question format");
         }
 
         parsedBody['dateOfBirth'] = dob;
