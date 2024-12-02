@@ -15,9 +15,6 @@
     <PreFlow name="PreFlow">
         <Request>
             <Step>
-                <Name>APIKeyVerifier</Name>
-            </Step>
-            <Step>
                 <Name>SpikeArrest</Name>
             </Step>
             <Step>
@@ -30,6 +27,12 @@
         <Flow name="temperature">
             <Description/>
             <Request>
+                <Step>
+                    <Name>IPAccessControl</Name>
+                </Step>
+                <Step>
+                    <Name>APIKeyVerifier</Name>
+                </Step>
                 <Step>
                     <Name>AM-Key</Name>
                 </Step>
@@ -45,7 +48,30 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/temperature") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
+        </Flow>
+        <Flow name="userInfo">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>ExtractJWT</Name>
+                </Step>
+                <Step>
+                    <Name>JWT</Name>
+                </Step>
+                <Step>
+                    <Name>HMAC</Name>
+                </Step>
+                <Step>
+                    <Name>SC-Geocode</Name>
+                </Step>
+                <Step>
+                    <Name>EV-Geocode</Name>
+                    <Condition>geocodeResponse.content != null</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
