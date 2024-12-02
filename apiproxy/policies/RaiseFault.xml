@@ -1,0 +1,16 @@
+<RaiseFault name="RaiseFault">
+ <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+ <FaultResponse>
+   <Set>
+     <Payload contentType="text/xml">
+       <root>Please contact support@company.com</root>
+     </Payload>
+     <StatusCode>{response.status.code}</StatusCode>
+   </Set>
+   <Add>
+     <Headers>
+       <Header name="FaultReason">{fault.name}</Header>
+     </Headers>
+   </Add>
+ </FaultResponse>
+</RaiseFault>

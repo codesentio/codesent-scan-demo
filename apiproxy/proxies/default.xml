@@ -36,7 +36,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/temperature") and (request.verb != "OPTIONS")</Condition>
         </Flow>
         <Flow name="userInfo-GET">
             <Description/>
@@ -49,6 +49,10 @@
                 </Step>
                 <Step>
                     <Name>HMAC</Name>
+                </Step>
+                <Step>
+                    <Name>RaiseFault</Name>
+                    <Condition>(isError = true)</Condition>
                 </Step>
             </Request>
             <Response/>
