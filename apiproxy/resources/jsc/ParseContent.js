@@ -4,9 +4,8 @@ if (requestBody) {
     try {
         var parsedBody = JSON.parse(requestBody);
 
-        var name = parsedBody.name;
-        var dob = parsedBody.dob;
-        var securityQuestion = parsedBody.securityQuestion;
+        var name = parsedBody['name'];
+        var dob = parsedBody['dob'];
 
         var nameRegex = /^[a-zA-Z\s]+$/;
         var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -21,15 +20,11 @@ if (requestBody) {
             throw new Error("Invalid security question format");
         }
 
-        var newJson = {
-            fullName: name,
-            dateOfBirth: dob,
-            secretQuestion: securityQuestion
-        };
+        parsedBody['dateOfBirth'] = dob;
 
-        var newJsonString = JSON.stringify(newJson);
+        var updJsonString = JSON.stringify(parsedBody);
 
-        context.setVariable("request.content", newJsonString);
+        context.setVariable("request.content", updJsonString);
         context.setVariable("request.headers.content-type", "application/json");
     } catch (e) {
         context.setVariable("error", e.message || "Invalid JSON");
