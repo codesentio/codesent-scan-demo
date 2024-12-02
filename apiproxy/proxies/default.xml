@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--
- Copyright 2023 Google LLC
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-      http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
 <ProxyEndpoint name="default">
     <PreFlow name="PreFlow">
         <Request>
@@ -57,21 +45,30 @@
                     <Name>ExtractJWT</Name>
                 </Step>
                 <Step>
-                    <Name>JWT</Name>
+                    <Name>DecodeJWT</Name>
                 </Step>
                 <Step>
                     <Name>HMAC</Name>
                 </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix == "/userinfo") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="userInfo">
+            <Description/>
+            <Request>
                 <Step>
-                    <Name>SC-Geocode</Name>
+                    <Name>ParseJSONtoXML</Name>
                 </Step>
                 <Step>
-                    <Name>EV-Geocode</Name>
-                    <Condition>geocodeResponse.content != null</Condition>
+                    <Name>DecodeJWT</Name>
+                </Step>
+                <Step>
+                    <Name>HMAC</Name>
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
+            <Condition>(proxy.pathsuffix == "/userinfo") and (request.verb = "PATCH")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
@@ -82,6 +79,11 @@
         <BasePath>/v1/samples/composite-api</BasePath>
     </HTTPProxyConnection>
     <RouteRule name="default">
+        <Condition>(proxy.pathsuffix == "/temperature")</Condition>
         <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="users">
+        <Condition>(proxy.pathsuffix == "/userinfo")</Condition>
+        <TargetEndpoint>users</TargetEndpoint>
     </RouteRule>
 </ProxyEndpoint>
