@@ -19,9 +19,6 @@
                     <Name>IPAccessControl</Name>
                 </Step>
                 <Step>
-                    <Name>APIKeyVerifier</Name>
-                </Step>
-                <Step>
                     <Name>AM-Key</Name>
                 </Step>
                 <Step>
