@@ -4,14 +4,14 @@ if (requestBody) {
     try {
         var parsedBody = JSON.parse(requestBody);
 
-        var name = parsedBody['name'];
+        var userName = parsedBody.userName;
         var dob = parsedBody['dob'];
         var securityQuestion = parsedBody['securityQuestion'];
 
         var nameRegex = /[a-zA-Z\s]+/;
         var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-        if (!nameRegex.test(name)) {
+        if (!nameRegex.test(userName)) {
             throw new Error("Invalid name format");
         }
         if (!dobRegex.test(dob)) {
