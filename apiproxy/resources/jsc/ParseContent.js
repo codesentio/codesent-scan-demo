@@ -8,7 +8,7 @@ if (requestBody) {
         var dob = parsedBody['dob'];
         var securityQuestion = parsedBody['securityQuestion'];
 
-        var nameRegex = /^[a-zA-Z\s]+$/;
+        var nameRegex = /[a-zA-Z\s]+/;
         var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
 
         if (!nameRegex.test(name)) {
