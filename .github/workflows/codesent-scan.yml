@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Scan with CodeSent
-        uses: codesentio/codesent-scan-action@v1.0-alpha4
+        uses: codesentio/codesent-scan-action@v1.1-alpha
         with:
           api-key: ${{ secrets.CODESENT_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
