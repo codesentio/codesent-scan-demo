@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Scan with CodeSent
-        uses: your-org/codesent-scan-action@v1
+        uses: codesent/codesent-scan-action@v1
         with:
           api-key: ${{ secrets.CODESENT_API_KEY }}
