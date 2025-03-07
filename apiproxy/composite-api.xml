@@ -11,5 +11,5 @@
  limitations under the License.
 -->
 <APIProxy revision="1" name="composite-api">
-    <Description>Apigee API Proxy that demonstrates calling two different API endpoints in one proxy flow</Description>
+    <Description>Apigee API Proxy that demonstrates calling two different API endpoints in one proxy flow </Description>
 </APIProxy>
