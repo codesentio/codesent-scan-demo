@@ -16,3 +16,4 @@ jobs:
         uses: codesentio/codesent-scan-action@v1.0-alpha
         with:
           api-key: ${{ secrets.CODESENT_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
