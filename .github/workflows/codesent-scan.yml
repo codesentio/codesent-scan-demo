@@ -3,7 +3,11 @@ name: Scan API with CodeSent
 on:
   pull_request:
     branches:
-      - main
+      - main 
+
+  push:
+    branches:
+      - main  
 
 jobs:
   scan:
@@ -13,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Scan with CodeSent
-        uses: codesentio/codesent-scan-action@v1.1-alpha7
+        uses: codesentio/codesent-scan-action@v1.1-alpha8
         with:
           api-key: ${{ secrets.CODESENT_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
