@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-UserInfo">
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Header name="Authorization">
+        <Pattern ignoreCase="false">Bearer {jwt}</Pattern>
+    </Header>
+    <VariablePrefix>flow</VariablePrefix>
+    <Source clearPayload="false">request</Source>
+</ExtractVariables>

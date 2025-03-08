@@ -1,0 +1,8 @@
+<AccessControl name="IPAccessControl">
+  <IPRules noRuleMatchAction = "ALLOW">
+    <MatchRule action = "DENY">
+      <SourceAddress mask="32">198.51.100.1</SourceAddress>
+      <SourceAddress mask="24">198.52.100.0</SourceAddress>
+    </MatchRule>
+  </IPRules>
+</AccessControl>

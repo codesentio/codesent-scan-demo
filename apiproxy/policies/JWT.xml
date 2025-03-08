@@ -1,0 +1,4 @@
+<DecodeJWT name="DecodeJWT">
+    <DisplayName>JWT</DisplayName>
+    <Source>flow.jwt</Source>
+</DecodeJWT>

@@ -1,0 +1,5 @@
+<MaskDataConfiguration name="default">
+  <Variables>
+     <Variable>request.queryparam.w</Variable>
+  </Variables>
+</MaskDataConfiguration>

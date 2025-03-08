@@ -1,0 +1,23 @@
+name: Scan API with CodeSent
+
+on:
+  pull_request:
+    branches:
+      - main 
+
+  push:
+    branches:
+      - main  
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan with CodeSent
+        uses: codesentio/codesent-scan-action@v1.2-alpha1
+        with:
+          api-key: ${{ secrets.CODESENT_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

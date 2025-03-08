@@ -1,0 +1,24 @@
+<AssignMessage continueOnError="false" enabled="true" name="AM-Target">
+    <AssignVariable>
+        <Name>target.copy.pathsuffix</Name>
+        <Value>false</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>abc_text</Name>
+        <Value>abc</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>assigned</Name>
+        <Template>{md5Base64(abc_text)}</Template>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>target.url</Name>
+        <Template>https://api.open-meteo.com/v1/forecast?latitude={lat}&amp;longtitude={lon}&amp;current={flow.current}</Template>
+    </AssignVariable>
+    <Remove>
+        <QueryParams>
+            <QueryParam name="near" />
+        </QueryParams>
+    </Remove>
+    <AssignTo>request</AssignTo>
+</AssignMessage>
