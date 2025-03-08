@@ -33,7 +33,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/temperature") and (request.verb != "OPTIONS")</Condition>
+            <Condition>(proxy.pathsuffix == "/temperature") and (request.verb != "OPTIONS")</Condition>
         </Flow>
         <Flow name="userInfo-GET">
             <Description/>
