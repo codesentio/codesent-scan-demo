@@ -21,3 +21,4 @@ jobs:
         with:
           api-key: ${{ secrets.CODESENT_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          upload-type: mask_config
